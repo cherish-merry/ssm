@@ -69,17 +69,46 @@ public class ItemsController {
         return "redirect:findAll.action";
     }
 
+
+    /**
+    * @discription
+    * @param: [id]
+    * @return: java.lang.String
+    * @author: ckz
+    * @date: 2020/7/16
+    */
+
+
+    @RequestMapping("/delete")
     public String delete(Integer id){
         service.delete(id);
         return "itemsList.jsp";
     }
 
+    /***
+    * @discription
+    * @param: [ids]
+    * @return: java.lang.String
+    * @author: ckz
+    * @date: 2020/7/16
+    */
+
+
+    @RequestMapping("/deleteAll")
     public String deleteAll(List<Integer> ids){
         service.deleteByIds(ids);
         return "itemsList.jsp";
     }
 
+    /***
+    * @discription
+    * @param: [items]
+    * @return: java.lang.String
+    * @author: ckz
+    * @date: 2020/7/16
+    */
 
+    @RequestMapping("/update")
     public String update(Items items){
         service.update(items);
         return "itemsList.jsp";
